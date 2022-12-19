@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Библиотека</title>
+    <link rel="stylesheet" href="media/static/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style>
+        title {
+            text-align:  center;
+        };
+
+        row {
+            margin-left: auto;
+            margin-right: auto;
+            width: 6px
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h1>Библиотека</h1>
+        </center>
+        <hr/>
+        <div class="row">
+            {% if books %}
+                {% for book in books %}
+                <div class="card mb-3" style="width: 540px;">
+                    <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{book.img}}" class="card-img" alt="Фото книги">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{book.title}}</h5>
+                            <p class="card-text">{{book.author}}</p>
+                        </div>
+                        {% if not book.active %}
+                            <div class="card mb-3" style="width: 150px; background-color: red;">
+                                <strong><big>Книги нет</big></strong>
+                            </div>
+                        {% endif %}
+                    </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% else %}
+                <center>
+                    <h1>Нет ни одной книги</h1>
+                </center>
+            {% endif %}
+        </div>
+    </div>
+    <script src="media/static/jquery-3.3.1.slim.min.js"></script>
+    <script src="media/static/popper.min.js"></script>
+    <script src="media/static/bootstrap.min.js"></script>
+</body>
+</html>
