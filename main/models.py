@@ -7,6 +7,7 @@ class Book(models.Model):
     img = models.ImageField(verbose_name='Картинка книги', upload_to='media')
     code = models.IntegerField('Персональный код книги')
     in_library = models.BooleanField('Наличие книги')
+    description = models.TextField('Описание книги', blank=True)
 
     def __str__(self) -> str:
         return self.title
