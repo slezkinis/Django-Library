@@ -3,36 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>{{book.title}}</title>
-    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/bootstrap.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        title {
-            text-align:  center;
-        };
+      body {
+        font-size: 1.5rem
+      }
+      .title {
+          text-align: center;
+      };
 
-        row {
-            margin-left: auto;
-            margin-right: auto;
-            width: 6px
-        }
-
+      .row {
+          margin-left: auto;
+          margin-right: auto;
+          width: 6px;
+      }
+      .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+      }
+      .description {
+        text-align: left;
+        margin-left: 10px;
+        margin-right: auto;
+        width: auto;
+      }
     </style>
 </head>
 <body>
-    <div class="row">
-        <center>
-            <h1>{{book.title}} {{book.author}}</h1>
-        </center>
-        </hr>
-        <img src="{{book.img}}" width="300px" height="300px"></img>
-        </hr>
-        <center>
-            <h1>{{book.description}}</h1>
-        </center>
+  <div class="title">
+    <h1>{{book.title}} - {{book.author}}</h1>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="img">
+      <img src="{{book.img}}" width="300px" height="300px"></img>
     </div>
-    <script src="static/jquery-3.3.1.slim.min.js"></script>
-    <script src="static/popper.min.js"></script>
-    <script src="static/bootstrap.min.js"></script>
+  </div>
+  <hr/>
+  {% if book.description %}
+    <div class="description">
+      <p>{{book.description}}</p>
+    </div>
+  {% else %}
+  <div class="title">
+    <p>Для этой книги пока не добавлено описания</p>
+  </div>
+  {% endif %}
+  <script src="../../static/jquery-3.3.1.slim.min.js"></script>
+  <script src="../../static/popper.min.js"></script>
+  <script src="../../static/bootstrap.min.js"></script>
 </body>
 </html>

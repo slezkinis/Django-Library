@@ -26,7 +26,6 @@ def show_book(request, book_id):
         'description': book.description,
         'author': book.author,
         'id': book_id
-
     }
     return render(request, 'main/book.html', context={'book': about_book})
 

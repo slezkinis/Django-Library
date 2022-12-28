@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Библиотека</title>
-    <link rel="stylesheet" href="media/static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
@@ -11,12 +11,20 @@
             text-align:  center;
         };
 
-        row {
+        .row {
             margin-left: auto;
             margin-right: auto;
             width: 6px
         }
-
+        .btn {
+            display: inline-block; /* Строчно-блочный элемент */
+            background: #8C959D; /* Серый цвет фона */
+            color: #fff; /* Белый цвет текста */
+            padding: 1rem 1.5rem; /* Поля вокруг текста */
+            text-decoration: none; /* Убираем подчёркивание */
+            border-radius: 3px; /* Скругляем уголки */
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +51,7 @@
                                 <strong><big>Книги нет</big></strong>
                             </div>
                         {% endif %}
-                        <a href="http://127.0.0.1:8000/book/{{book.id}}">Ссылка</a>
+                        <a href="http://127.0.0.1:8000/book/{{book.id}}" target="_blank" class="btn">Ссылка</a>
                     </div>
                     </div>
                 </div>
@@ -55,8 +63,8 @@
             {% endif %}
         </div>
     </div>
-    <script src="media/static/jquery-3.3.1.slim.min.js"></script>
-    <script src="media/static/popper.min.js"></script>
-    <script src="media/static/bootstrap.min.js"></script>
+    <script src="static/jquery-3.3.1.slim.min.js"></script>
+    <script src="static/popper.min.js"></script>
+    <script src="static/bootstrap.min.js"></script>
 </body>
 </html>
