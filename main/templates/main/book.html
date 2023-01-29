@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <title>{{book.title}}</title>
-    <link rel="stylesheet" href="../../static/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
@@ -25,10 +26,10 @@
         margin-right: auto
       }
       .description {
-        text-align: left;
-        margin-left: 10px;
+        text-align: center;
+        margin-left: 30px;
         margin-right: auto;
-        width: auto;
+        width: 60%;
       }
     </style>
 </head>
@@ -49,11 +50,11 @@
     </div>
   {% else %}
   <div class="title">
-    <p>Для этой книги пока не добавлено описания</p>
+    <p>Для этой книги пока не добавлено описание</p>
   </div>
   {% endif %}
-  <script src="../../static/jquery-3.3.1.slim.min.js"></script>
-  <script src="../../static/popper.min.js"></script>
-  <script src="../../static/bootstrap.min.js"></script>
+  <script src="{% static 'jquery-3.3.1.slim.min.js' %}"></script>
+  <script src="{% static 'popper.min.js' %}"></script>
+  <script src="{% static 'bootstrap.min.js' %}"></script>
 </body>
 </html>

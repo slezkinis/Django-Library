@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  {% load static %}
     <meta charset="UTF-8">
     <title>Библиотека</title>
-    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
+        .card-img {
+          width: 100%;
+          height: 100%;
+        }
         title {
             text-align:  center;
         };
@@ -63,8 +68,8 @@
             {% endif %}
         </div>
     </div>
-    <script src="static/jquery-3.3.1.slim.min.js"></script>
-    <script src="static/popper.min.js"></script>
-    <script src="static/bootstrap.min.js"></script>
+    <script src="{% static 'jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
 </body>
 </html>
